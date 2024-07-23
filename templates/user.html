@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}User Dashboard{% endblock %}
+{% block content %}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card mb-4">
+            <div class="card-header bg-info text-white">
+                <h2 class="text-center">Add Visitor Data</h2>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="name" placeholder="Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="tel" class="form-control" name="phone" placeholder="Phone" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="meeting" placeholder="Meeting" required>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Add Visitor</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} mt-3">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <div class="card mt-4">
+            <div class="card-header bg-secondary text-white">
+                <h2 class="text-center">Recent Visitors</h2>
+            </div>
+            <div class="card-body">
+                {% if recent_visitors %}
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Phone</th>
+                                    <th>Meeting</th>
+                                    <th>Timestamp</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for visitor in recent_visitors %}
+                                    <tr>
+                                        <td>{{ visitor.name }}</td>
+                                        <td>{{ visitor.phone }}</td>
+                                        <td>{{ visitor.meeting }}</td>
+                                        <td>{{ visitor.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% else %}
+                    <p class="text-center">No recent visitors.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

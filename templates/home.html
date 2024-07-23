@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="jumbotron text-center">
+    <h1 class="display-4">Welcome to the Building Security System</h1>
+    <p class="lead">Ensuring safety and security for your premises</p>
+    <hr class="my-4">
+    <p>Manage visitors, track access, and maintain a secure environment with ease.</p>
+    <a class="btn btn-primary btn-lg" href="{{ url_for('login') }}" role="button">Get Started</a>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4">
+        <h3><i class="fas fa-user-shield"></i> Access Control</h3>
+        <p>Manage and monitor who enters and exits your building.</p>
+    </div>
+    <div class="col-md-4">
+        <h3><i class="fas fa-camera"></i> Surveillance</h3>
+        <p>Keep an eye on your premises with our advanced monitoring system.</p>
+    </div>
+    <div class="col-md-4">
+        <h3><i class="fas fa-chart-line"></i> Reporting</h3>
+        <p>Generate detailed reports on security events and visitor logs.</p>
+    </div>
+</div>
+{% endblock %}
