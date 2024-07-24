@@ -24,29 +24,29 @@ Ensuring safety and security for your premises with ease and efficiency.
 ### Installation
 
 1. Clone the repository:
-   ```
+   ```sh
    git clone https://github.com/your-username/raven-security.git
    cd raven-security
    ```
 
 2. Create and activate a virtual environment:
-   ```
+   ```sh
    python -m venv env
    source env/bin/activate  # On Windows use `env\Scripts\activate`
    ```
 
 3. Install the required packages:
-   ```
+   ```sh
    pip install -r requirements.txt
    ```
 
 4. Set up the database:
-   ```
+   ```sh
    flask db upgrade
    ```
 
 5. Run the application:
-   ```
+   ```sh
    flask run
    ```
 
