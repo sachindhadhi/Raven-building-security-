@@ -82,9 +82,9 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## 📞 Contact
 
-Your Name - [your-email@example.com](mailto:your-email@example.com)
+Sachin Dhadhi - sachindhadhi54@gmail.com
 
-Project Link: [https://github.com/your-username/raven-security](https://github.com/your-username/raven-security)
+
 
 ---
 
